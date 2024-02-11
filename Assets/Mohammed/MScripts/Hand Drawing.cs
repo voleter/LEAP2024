@@ -1,78 +1,99 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SimpleVRDrawHandTracking : MonoBehaviour
+public class VRDraw : MonoBehaviour
 {
-    public OVRHand ovrHand; // Assign this via the Unity Inspector to the hand you want to track
-    public GameObject linePrefab; // Assign a prefab with a LineRenderer component
+    public OVRHand ovrHand;
+    public GameObject linePrefab;
     private LineRenderer currentLineRenderer;
-    public float lineWidth = 0.01f; // Set the desired line width
-    public Material lineMaterial; // Assign the material for the line
+    public float lineWidth = 0.01f;
+    public Material lineMaterial;
     private bool isDrawing = false;
-    private List<GameObject> lines = new List<GameObject>(); // Stores all drawn lines
+    private bool isErasing = false;
+    private List<GameObject> lines = new List<GameObject>();
     private OVRSkeleton skeleton;
+    public LayerMask canvasLayer;
 
     void Start()
     {
-        // Attempt to get the OVRSkeleton component from the assigned hand
         skeleton = ovrHand.GetComponent<OVRSkeleton>();
     }
 
     void Update()
     {
-        // Check if the hand is being tracked
         if (ovrHand.IsTracked)
         {
-            DrawWithHandTracking();
-        }
-    }
-
-    void DrawWithHandTracking()
-    {
-        // Use the pinch gesture to start and continue drawing
-        if (ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Index))
-        {
-            if (!isDrawing)
+            if (CheckForErasingGesture())
             {
-                // Capture the starting position of the pinch
-                Vector3 startPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
-                StartDrawing(startPosition);
+                isErasing = true;
+                EraseLine();
+            }
+            else if (ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Index) && !isErasing)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position, Vector3.forward, out hit, Mathf.Infinity, canvasLayer))
+                {
+                    if (hit.collider.gameObject.CompareTag("Canvas"))
+                    {
+                        Vector3 startPosition = hit.point;
+                        if (!isDrawing)
+                        {
+                            StartDrawing(startPosition);
+                        }
+                        else
+                        {
+                            UpdateDrawing(startPosition);
+                        }
+                    }
+                }
             }
             else
             {
-                // Continue drawing from the last position
-                UpdateDrawing();
+                isDrawing = false;
+                isErasing = false;
             }
-        }
-        else
-        {
-            isDrawing = false;
         }
     }
 
     void StartDrawing(Vector3 startPosition)
     {
+        if (isErasing) return;
+
         isDrawing = true;
         GameObject lineObj = Instantiate(linePrefab, startPosition, Quaternion.identity);
         currentLineRenderer = lineObj.GetComponent<LineRenderer>();
-
-        // Initialize LineRenderer settings
         currentLineRenderer.startWidth = lineWidth;
         currentLineRenderer.endWidth = lineWidth;
         currentLineRenderer.material = lineMaterial;
-        currentLineRenderer.SetPosition(0, startPosition); // Set the first position to the pinch position
-        currentLineRenderer.SetPosition(1, startPosition); // Initially, the end position is the same as the start
-
+        currentLineRenderer.SetPosition(0, startPosition);
+        currentLineRenderer.SetPosition(1, startPosition);
         lines.Add(lineObj);
     }
 
-    void UpdateDrawing()
+    void UpdateDrawing(Vector3 currentPosition)
     {
         if (currentLineRenderer != null && isDrawing)
         {
-            Vector3 currentPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
             currentLineRenderer.positionCount++;
             currentLineRenderer.SetPosition(currentLineRenderer.positionCount - 1, currentPosition);
+        }
+    }
+
+    bool CheckForErasingGesture()
+    {
+        return ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Middle) && ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Thumb);
+    }
+
+    void EraseLine()
+    {
+        Vector3 handPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
+        for (int i = lines.Count - 1; i >= 0; i--)
+        {
+            if (Vector3.Distance(handPosition, lines[i].transform.position) < 0.05f)
+            {
+                Destroy(lines[i]);
+                lines.RemoveAt(i);
+            }
         }
     }
 }
