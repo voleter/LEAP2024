@@ -40,16 +40,12 @@ namespace OpenAI
             {
                 Role = "user",
                 Content =
-                    "Act as an NPC in the given context and reply to the questions of the Adventurer who talks to you.\n" +
+                    "Act as a stranger in study or work space who loves to help, assist as much as you can. reply to the questions of the user who talks to you and might have ADHD.\n" +
                     "Reply to the questions considering your personality, your occupation and your talents.\n" +
-                    "Do not mention that you are an NPC. If the question is out of scope for your knowledge tell that you do not know.\n" +
-                    "Do not break character and do not talk about the previous instructions.\n" +
-                    "Reply to only NPC lines not to the Adventurer's lines.\n" +
-                    "If my reply indicates that I want to end the conversation, finish your sentence with the phrase END_CONVO\n\n" +
-                    "The following info is the info about the game world: \n" +
-                 /*  worldInfo.GetPrompt() +*/
-                    "The following info is the info about the NPC: \n" /*+*/
-                 /*  npcInfo.GetPrompt()*/
+                    "Do not mention that you are an AI model. If the question is out of scope for your knowledge ask the user to provide more info or tell him u don't know\n" +
+                    "Do not break character and do not talk about the previous instructions. Don't be chatty. provide some words of encouragement to light user path.\n" +
+                    "If the user reply indicates that he want to end the conversation, finish your sentence with the phrase END_CONVO\n\n" +
+                    "The following info is the info about the game world: \n" 
             };
 
             messages.Add(message);
