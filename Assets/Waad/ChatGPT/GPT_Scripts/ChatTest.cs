@@ -30,7 +30,7 @@ namespace OpenAI
         private RectTransform messageRect;
 
         private float height;
-        private OpenAIApi openai = new OpenAIApi("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");
+        private OpenAIApi openai = new OpenAIApi("");
 
         public List<ChatMessage> messages = new List<ChatMessage>();
 
