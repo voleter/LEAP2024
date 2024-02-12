@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "com.srcnalt.openai-unity": {
-      "version": "file:C:/Users/waada/OneDrive/Downloads/OpenAI-Unity-master/OpenAI-Unity-master",
+      "version": "https://github.com/srcnalt/OpenAI-Unity.git",
       "depth": 0,
-      "source": "local",
+      "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.2.1"
-      }
+      },
+      "hash": "f7f501c076f27a12a2cbb2fa1235a106ce7b16e3"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
