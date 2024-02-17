@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32010803, g: 0.25963405, b: 0.368446, a: 1}
+  m_IndirectSpecularColor: {r: 0.31992328, g: 0.25955722, b: 0.3681852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6771,6 +6771,7 @@ GameObject:
   - component: {fileID: 1034639056}
   - component: {fileID: 1034639055}
   - component: {fileID: 1034639058}
+  - component: {fileID: 1034639059}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6842,6 +6843,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
   _useInitialPressPositionForDrag: 1
+--- !u!114 &1034639059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034639054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f1a9a1d119a5944aacfb87d1ec283a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  rayTransform: {fileID: 0}
+  m_Cursor: {fileID: 0}
+  joyPadClickButton: 1
+  gazeClickKey: 32
+  performSphereCastForGazepointer: 0
+  useRightStickScroll: 1
+  rightStickDeadZone: 0.15
+  useSwipeScroll: 1
+  swipeDragThreshold: 2
+  swipeDragScale: 1
+  InvertSwipeXAxis: 0
+  angleDragThreshold: 1
+  m_SpherecastRadius: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_AllowActivationOnMobileDevice: 1
 --- !u!1 &1036122147
 GameObject:
   m_ObjectHideFlags: 0
@@ -8028,7 +8061,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181482960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -9646,8 +9679,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 442215727}
   m_HandleRect: {fileID: 442215726}
   m_Direction: 0
-  m_Value: 0.50000006
-  m_Size: 0.263893
+  m_Value: 0.5
+  m_Size: 0.26389298
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
