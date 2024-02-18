@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Oculus.Interaction;
+
 public class VRDraw : MonoBehaviour
 {
     public OVRHand ovrHand;
@@ -14,39 +15,34 @@ public class VRDraw : MonoBehaviour
 
     void Start()
     {
-
         skeleton = ovrHand.GetComponent<OVRSkeleton>();
     }
 
     void Update()
     {
-
         if (ovrHand.IsTracked)
         {
-            DrawWithHandTracking();
-        }
-    }
-
-    void DrawWithHandTracking()
-    {
-
-        if (ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Index))
-        {
-            if (!isDrawing)
+            if (ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Index))
             {
-
-                Vector3 startPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
-                StartDrawing(startPosition);
+                if (!isDrawing)
+                {
+                    Vector3 startPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
+                    StartDrawing(startPosition);
+                }
+                else
+                {
+                    UpdateDrawing();
+                }
+            }
+            else if (ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Middle) && ovrHand.GetFingerIsPinching(OVRHand.HandFinger.Thumb))
+            {
+                // Switch to erasing mode
+                EraseDrawing();
             }
             else
             {
-
-                UpdateDrawing();
+                isDrawing = false;
             }
-        }
-        else
-        {
-            isDrawing = false;
         }
     }
 
@@ -55,7 +51,6 @@ public class VRDraw : MonoBehaviour
         isDrawing = true;
         GameObject lineObj = Instantiate(linePrefab, startPosition, Quaternion.identity);
         currentLineRenderer = lineObj.GetComponent<LineRenderer>();
-
 
         currentLineRenderer.startWidth = lineWidth;
         currentLineRenderer.endWidth = lineWidth;
@@ -73,6 +68,20 @@ public class VRDraw : MonoBehaviour
             Vector3 currentPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_IndexTip].Transform.position;
             currentLineRenderer.positionCount++;
             currentLineRenderer.SetPosition(currentLineRenderer.positionCount - 1, currentPosition);
+        }
+    }
+
+    void EraseDrawing()
+    {
+        Vector3 handPosition = skeleton.Bones[(int)OVRSkeleton.BoneId.Hand_WristRoot].Transform.position;
+        foreach (GameObject line in new List<GameObject>(lines))
+        {
+            // Check if the hand is close enough to the line to erase it
+            if (Vector3.Distance(handPosition, line.transform.position) < lineWidth * 2) // Adjust this distance as needed
+            {
+                lines.Remove(line);
+                Destroy(line);
+            }
         }
     }
 }
