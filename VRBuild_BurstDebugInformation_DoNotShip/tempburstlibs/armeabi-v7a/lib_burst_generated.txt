@@ -8,7 +8,6 @@ Library: /Volumes/Sayegh ExternalSSD/LEAP2024/Temp/BurstOutput/tempburstlibs/arm
 --float-precision=Standard
 --target-framework=NetFramework
 --assembly-defines=Assembly-CSharp;
---assembly-defines=Meta.XR.Audio;
 --assembly-defines=Meta.XR.BuildingBlocks;
 --assembly-defines=meta.xr.mrutilitykit;
 --assembly-defines=Mono.Security;
@@ -61,7 +60,6 @@ Library: /Volumes/Sayegh ExternalSSD/LEAP2024/Temp/BurstOutput/tempburstlibs/arm
 --target-framework=NetFramework
 --float-mode=Fast
 --assembly-defines=Assembly-CSharp;
---assembly-defines=Meta.XR.Audio;
 --assembly-defines=Meta.XR.BuildingBlocks;
 --assembly-defines=meta.xr.mrutilitykit;
 --assembly-defines=Mono.Security;
