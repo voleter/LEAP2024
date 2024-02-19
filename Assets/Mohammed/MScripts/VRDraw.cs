@@ -1,29 +1,31 @@
 using UnityEngine;
 using System.Collections.Generic;
-// Ensure you're using the correct namespace for Oculus functionality
 using Oculus.Interaction;
 
 public class VRDrawHandTracking : MonoBehaviour
 {
     public OVRHand ovrHand;
-    // Add a reference to the OVRSkeleton component
     public OVRSkeleton ovrSkeleton;
     public GameObject linePrefab;
     private LineRenderer currentLineRenderer;
     public float lineWidth = 0.01f;
     public Material lineMaterial;
     private bool isDrawing = false;
+    private bool isErasing = false;
     private List<GameObject> lines = new List<GameObject>();
 
     void Update()
     {
-        // Check if the hand is tracked
         if (ovrHand.IsTracked)
         {
-            // Use pinch strength to determine if the user is pinching
+            isErasing = ovrHand.GetFingerPinchStrength(OVRHand.HandFinger.Middle) > 0.5f;
+            if (isErasing)
+            {
+                EraseNearestLine();
+                return;
+            }
             float pinchStrength = ovrHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
-
-            if (pinchStrength > 0.5f) // Adjust pinch strength threshold as needed
+            if (pinchStrength > 0.5f)
             {
                 if (!isDrawing)
                 {
@@ -47,13 +49,11 @@ public class VRDrawHandTracking : MonoBehaviour
         isDrawing = true;
         GameObject lineObj = Instantiate(linePrefab, startPosition, Quaternion.identity);
         currentLineRenderer = lineObj.GetComponent<LineRenderer>();
-
         currentLineRenderer.startWidth = lineWidth;
         currentLineRenderer.endWidth = lineWidth;
         currentLineRenderer.material = lineMaterial;
         currentLineRenderer.SetPosition(0, startPosition);
         currentLineRenderer.SetPosition(1, startPosition);
-
         lines.Add(lineObj);
     }
 
@@ -67,10 +67,8 @@ public class VRDrawHandTracking : MonoBehaviour
         }
     }
 
-    // This method now correctly fetches the finger tip position
     private Vector3 GetFingerTipPosition()
     {
-        // Find the index tip bone
         OVRSkeleton.BoneId boneId = OVRSkeleton.BoneId.Hand_IndexTip;
         foreach (var bone in ovrSkeleton.Bones)
         {
@@ -79,6 +77,27 @@ public class VRDrawHandTracking : MonoBehaviour
                 return bone.Transform.position;
             }
         }
-        return Vector3.zero; // Fallback in case the bone isn't found
+        return Vector3.zero;
+    }
+
+    void EraseNearestLine()
+    {
+        Vector3 handPosition = GetFingerTipPosition();
+        GameObject nearestLine = null;
+        float nearestDistance = float.MaxValue;
+        foreach (GameObject line in lines)
+        {
+            float distance = Vector3.Distance(handPosition, line.GetComponent<LineRenderer>().GetPosition(0));
+            if (distance < nearestDistance)
+            {
+                nearestLine = line;
+                nearestDistance = distance;
+            }
+        }
+        if (nearestLine != null)
+        {
+            lines.Remove(nearestLine);
+            Destroy(nearestLine);
+        }
     }
 }
