@@ -21,20 +21,21 @@ public class VRDrawHandTracking : MonoBehaviour
             isErasing = ovrHand.GetFingerPinchStrength(OVRHand.HandFinger.Middle) > 0.5f;
             if (isErasing)
             {
-                EraseNearestLine();
+                Vector3 eraserPosition = GetFingerTipPosition();
+                EraseNearestLineSegment(eraserPosition);
                 return;
             }
             float pinchStrength = ovrHand.GetFingerPinchStrength(OVRHand.HandFinger.Index);
             if (pinchStrength > 0.5f)
             {
+                Vector3 fingerTipPosition = GetFingerTipPosition();
                 if (!isDrawing)
                 {
-                    Vector3 startPosition = GetFingerTipPosition();
-                    StartDrawing(startPosition);
+                    StartDrawing(fingerTipPosition);
                 }
                 else
                 {
-                    UpdateDrawing();
+                    UpdateDrawing(fingerTipPosition);
                 }
             }
             else
@@ -57,11 +58,10 @@ public class VRDrawHandTracking : MonoBehaviour
         lines.Add(lineObj);
     }
 
-    void UpdateDrawing()
+    void UpdateDrawing(Vector3 currentPosition)
     {
         if (currentLineRenderer != null && isDrawing)
         {
-            Vector3 currentPosition = GetFingerTipPosition();
             currentLineRenderer.positionCount++;
             currentLineRenderer.SetPosition(currentLineRenderer.positionCount - 1, currentPosition);
         }
@@ -80,24 +80,19 @@ public class VRDrawHandTracking : MonoBehaviour
         return Vector3.zero;
     }
 
-    void EraseNearestLine()
+    void EraseNearestLineSegment(Vector3 eraserPosition)
     {
-        Vector3 handPosition = GetFingerTipPosition();
-        GameObject nearestLine = null;
-        float nearestDistance = float.MaxValue;
         foreach (GameObject line in lines)
         {
-            float distance = Vector3.Distance(handPosition, line.GetComponent<LineRenderer>().GetPosition(0));
-            if (distance < nearestDistance)
+            LineRenderer lr = line.GetComponent<LineRenderer>();
+            for (int i = 0; i < lr.positionCount; i++)
             {
-                nearestLine = line;
-                nearestDistance = distance;
+                Vector3 position = lr.GetPosition(i);
+                if (Vector3.Distance(eraserPosition, position) < 0.05f) // Assuming a small threshold for erasing
+                {
+                    lr.SetPosition(i, new Vector3(position.x, position.y, -1000)); // Move the point out of view
+                }
             }
-        }
-        if (nearestLine != null)
-        {
-            lines.Remove(nearestLine);
-            Destroy(nearestLine);
         }
     }
 }
