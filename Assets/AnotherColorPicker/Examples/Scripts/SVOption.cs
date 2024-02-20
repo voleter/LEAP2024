@@ -1,63 +1,49 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class SVOption : MonoBehaviour
 {
-    [SerializeField] Image BackgroundImage;
-    [SerializeField] Image ForegroundImage;
-    [SerializeField] Toggle toggle;
-    [SerializeField][Range(0,1)] float Saturation=1;
-    [SerializeField] [Range(0, 1)] float Value=1;
-    public ColorPaletteController ColorPaltte;
-    private Color color;
-    private void OnEnable()
+    public Image BackgroundImage;
+    public Image ForegroundImage;
+    public ColorPaletteController ColorPalette;
+    private Collider optionCollider;
+    private OVRHand hand;
+
+    void Start()
     {
-        ColorPaltte.OnHueChange.AddListener(OnHueChange);
-        if (!toggle) toggle = GetComponent<Toggle>();
+        hand = FindObjectOfType<OVRHand>();
+        optionCollider = GetComponent<Collider>();
     }
 
-    private void OnHueChange(float hue)
+    void Update()
     {
-        if (hue >= 1 - 1.0 / 25 && hue<=1)
-        {
-            //value ranges from 0 to 1
-            float value0to1 = (Value - Saturation + 0.75f) / 1.5f;
-            //value ranges from 0.5 to 0.75
-            //float value2 = (value0to1 + 0.5f) / 2.0f;
-            color = Color.HSVToRGB(0, 0, value0to1);
-
-        }
-        else
-            color = Color.HSVToRGB(hue, Saturation, Value);
-        UpdateSpritesColor();
+        CheckHandGestureOverOption();
     }
 
-    public void OnCheckChange(bool isChecked)
+    private void CheckHandGestureOverOption()
     {
-        UpdateSpritesColor();
-        ColorPaltte.Value = Value;
-        ColorPaltte.Saturation = Saturation;
-
-    }
-    private void UpdateSpritesColor()
-    {
-        if (toggle.isOn)
+        // Detect if the hand is pinching and if it's within the bounds of this option.
+        bool isPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Index);
+        if (isPinching && IsHandOverOption())
         {
-            BackgroundImage.color = color;
-            ForegroundImage.color = Color.white;
-        }
-        else
-        {
-            BackgroundImage.color = Color.white;
-            ForegroundImage.color = color;
+            // Toggle option logic here. This is a simplification.
+            BackgroundImage.enabled = !BackgroundImage.enabled;
+            ForegroundImage.enabled = !ForegroundImage.enabled;
+            // Apply changes to ColorPalette based on option.
+            ColorPalette.controlSV = BackgroundImage.enabled; // Example toggle
         }
     }
 
-    private void OnDisable()
+    private bool IsHandOverOption()
     {
-        ColorPaltte.OnHueChange.RemoveListener(OnHueChange);
+        // Implement checking if hand is over this option's collider.
+        // This method needs customization based on your scene setup.
+        Ray ray = new Ray(hand.transform.position, Vector3.forward);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.collider == optionCollider;
+        }
+        return false;
     }
 }

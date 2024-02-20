@@ -13,7 +13,13 @@ public class VRDrawHandTracking : MonoBehaviour
     private bool isDrawing = false;
     private bool isErasing = false;
     private List<GameObject> lines = new List<GameObject>();
-
+    public void UpdateDrawingColor(Color newColor)
+    {
+        if (lineMaterial != null)
+        {
+            lineMaterial.color = newColor; // Update the material's color
+        }
+    }
     void Update()
     {
         if (ovrHand.IsTracked)

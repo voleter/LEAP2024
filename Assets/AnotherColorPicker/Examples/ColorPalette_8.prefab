@@ -350,7 +350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6013590323122092837}
-  - component: {fileID: 3127652960751121809}
   m_Layer: 5
   m_Name: ColorPalette_8
   m_TagString: Untagged
@@ -380,36 +379,3 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: -250}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3127652960751121809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8964901665729559955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88918e321f5d7714495dc0423e32fdf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  picker: {fileID: 6740039140718850292}
-  pickedColorImage: {fileID: 6985858702225660485}
-  colorWheelMat: {fileID: 2100000, guid: ddf21bb823c3ad644b09d3d90adc37d0, type: 2}
-  totalNumberofColors: 12
-  wheelsCount: 1
-  startingAngle: 0.04167
-  controlSV: 0
-  inertia: 0
-  decelerationRate: 0.135
-  wholeSegment: 1
-  minimumSatValStep: 0.01
-  minimumSaturation: 0.25
-  maximumSaturation: 1
-  minimumValue: 0.25
-  maximumValue: 1
-  OnColorChange:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHueChange:
-    m_PersistentCalls:
-      m_Calls: []
