@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Barke
-  m_Shader: {fileID: 4800000, guid: 8b285c159c620c6459d22feaaadf4445, type: 3}
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,19 +24,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _DetailBump:
-        m_Texture: {fileID: 2800000, guid: e32b66be1ef32ee4497e7112f204d68c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailTex:
-        m_Texture: {fileID: 2800000, guid: e32b66be1ef32ee4497e7112f204d68c, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainBump:
-        m_Texture: {fileID: 2800000, guid: e32b66be1ef32ee4497e7112f204d68c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 572b1c35eb186ed4cbe03ecae47eebb0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e32b66be1ef32ee4497e7112f204d68c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 572b1c35eb186ed4cbe03ecae47eebb0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -55,6 +55,6 @@ Material:
     - _Strength: 0.2
     - _UseUIAlphaClip: 0
     m_Colors:
-    - _Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    - _Color: {r: 0.23584908, g: 0.1867684, b: 0.05043311, a: 1}
     - _Specular: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
