@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31992328, g: 0.25955722, b: 0.3681852, a: 1}
+  m_IndirectSpecularColor: {r: 0.32024902, g: 0.25871724, b: 0.36858445, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -940,7 +940,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 1
@@ -7473,7 +7473,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -15628,6 +15628,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1030856321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1405967262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 297896809702056212, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_Name
+      value: Extract whats inside and then delete this empty object
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1583.414
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5055072
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -711.9508
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5451608
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8383315
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -113.929
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212732637862761779, guid: 45b5c2358a6cfb747bea53c7f2ab6de0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45b5c2358a6cfb747bea53c7f2ab6de0, type: 3}
 --- !u!1 &1417873834
 GameObject:
   m_ObjectHideFlags: 0
@@ -17669,7 +17737,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 2
@@ -22718,6 +22786,7 @@ SceneRoots:
   - {fileID: 1185262353}
   - {fileID: 343847425}
   - {fileID: 1964602101}
+  - {fileID: 1405967262}
   - {fileID: 207147541}
   - {fileID: 773190230}
   - {fileID: 476427107}

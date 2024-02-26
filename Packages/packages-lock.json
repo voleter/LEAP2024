@@ -126,6 +126,16 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.simonoliver.unityfigma": {
+      "version": "https://github.com/simonoliver/UnityFigmaBridge.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.1-preview.1",
+        "com.unity.textmeshpro": "2.0.1"
+      },
+      "hash": "df46de2babace2aaec76342666722a740041d10d"
+    },
     "com.srcnalt.openai-unity": {
       "version": "file:../OpenAI-Unity-master",
       "depth": 0,
