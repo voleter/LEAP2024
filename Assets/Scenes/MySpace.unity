@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32010803, g: 0.25963405, b: 0.368446, a: 1}
+  m_IndirectSpecularColor: {r: 0.31992328, g: 0.25955722, b: 0.3681852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -458,34 +458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 505537798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &53066914 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 955821438763426326, guid: 6011506e6bdf743039d4e6c92971cc97,
-    type: 3}
-  m_PrefabInstance: {fileID: 845719444}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &53066918
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53066914}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &57495093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,15 +1299,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733c5f009d26ad49b3685117b8d3eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nativeId: 5282254251404903456
   _activeState: {fileID: 123116873}
   _interactableFilters: []
   _candidateTiebreaker: {fileID: 0}
+  _clearComputeCandidateOverrideOnSelect: 0
+  _clearComputeShouldSelectOverrideOnSelect: 0
+  _clearComputeShouldUnselectOverrideOnUnselect: 0
+  _state: 0
   _maxIterationsPerFrame: 1
+  _candidate: {fileID: 0}
+  _interactable: {fileID: 0}
+  _selectedInteractable: {fileID: 0}
   _data: {fileID: 0}
+  _started: 0
+  <IsRootDriver>k__BackingField: 1
   _selector: {fileID: 1829859068}
   _rayOrigin: {fileID: 343865083}
   _maxRayLength: 5
   _equalDistanceThreshold: 0.001
+  _movementHitDelta:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  <Origin>k__BackingField: {x: 0, y: 0, z: 0}
+  <Rotation>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
+  <Forward>k__BackingField: {x: 0, y: 0, z: 0}
+  <End>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!114 &123116873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,6 +1385,7 @@ MonoBehaviour:
   _gameObjects: []
   _monoBehaviours:
   - {fileID: 123116872}
+  _active: 0
 --- !u!114 &123116877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,6 +1818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 1787690769}
+  _isIndexFingerPinching: 0
+  _started: 0
 --- !u!4 &148552319
 Transform:
   m_ObjectHideFlags: 0
@@ -1872,13 +1864,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4855895ba1c44959a306beb7ae318fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 0
   _updateAfter: {fileID: 0}
+  _currentDataVersion: 0
   _cameraRigRef: {fileID: 2055068049}
   _processLateUpdates: 0
   _handedness: 0
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 2055068048}
   _handSkeletonProvider: {fileID: 1972576322}
+  _lastHandScale: 0
 --- !u!4 &149210483
 Transform:
   m_ObjectHideFlags: 0
@@ -2046,6 +2043,7 @@ MonoBehaviour:
   _cylinder: {fileID: 169604626}
   _facing: 2
   _height: 1
+  _started: 0
 --- !u!1 &170066699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,10 +2089,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2606bf2f0c914a7aba4390f29ba2eb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 1481361919}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 1481361919}
   _applyModifier: 0
+  _thisDataAsset:
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    IsTracked: 0
+    FrameId: 0
+  _currentDataAsset:
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    IsTracked: 0
+    FrameId: 0
 --- !u!1 &171247071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,12 +2801,17 @@ MonoBehaviour:
   _canvasRenderTexture: {fileID: 661810097}
   _meshFilter: {fileID: 0}
   _meshCollider: {fileID: 228083149}
+  _started: 0
   _cylinder: {fileID: 169604626}
   _orientation: 0
   _meshGeneration:
     VerticesPerDegree: 1.4
     MaxHorizontalResolution: 128
     MaxVerticalResolution: 32
+  <ArcDegrees>k__BackingField: 0
+  <Rotation>k__BackingField: 0
+  <Bottom>k__BackingField: 0
+  <Top>k__BackingField: 0
 --- !u!64 &228083149
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2865,15 +2883,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nativeId: 5282254251404903456
   _activeState: {fileID: 228541021}
   _interactableFilters: []
   _candidateTiebreaker: {fileID: 0}
+  _clearComputeCandidateOverrideOnSelect: 0
+  _clearComputeShouldSelectOverrideOnSelect: 0
+  _clearComputeShouldUnselectOverrideOnUnselect: 0
+  _state: 0
   _maxIterationsPerFrame: 3
+  _candidate: {fileID: 0}
+  _interactable: {fileID: 0}
+  _selectedInteractable: {fileID: 0}
   _data: {fileID: 0}
+  _started: 0
+  <IsRootDriver>k__BackingField: 1
   _pointTransform: {fileID: 1324174053}
   _radius: 0.005
   _touchReleaseThreshold: 0.002
   _equalDistanceThreshold: 0.001
+  <ClosestPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <TouchPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <TouchNormal>k__BackingField: {x: 0, y: 0, z: 0}
+  <Origin>k__BackingField: {x: 0, y: 0, z: 0}
+  _previousPokeOrigin: {x: 0, y: 0, z: 0}
+  _previousCandidate: {fileID: 0}
+  _hitInteractable: {fileID: 0}
+  _recoilInteractable: {fileID: 0}
+  _previousSurfacePointLocal: {x: 0, y: 0, z: 0}
+  _firstTouchPointLocal: {x: 0, y: 0, z: 0}
+  _targetTouchPointLocal: {x: 0, y: 0, z: 0}
+  _easeTouchPointLocal: {x: 0, y: 0, z: 0}
+  _isRecoiled: 0
+  _isDragging: 0
+  _dragEaseCurve:
+    _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _pinningResyncCurve:
+    _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _dragCompareSurfacePointLocal: {x: 0, y: 0, z: 0}
+  _maxDistanceFromFirstTouchPoint: 0
+  _recoilVelocityExpansion: 0
+  _selectMaxDepth: 0
+  _reEnterDepth: 0
+  _lastUpdateTime: 0
+  _isPassedSurface: 0
+  _previousDragCurveProgress: 0
+  _previousPinningCurveProgress: 0
 --- !u!114 &228541021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,6 +3002,7 @@ MonoBehaviour:
   _includeChildrenAsDependents: 1
   _gameObjects: []
   _monoBehaviours: []
+  _active: 0
 --- !u!114 &228541023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3062,10 +3162,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 370456981}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 370456981}
   _applyModifier: 0
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
 --- !u!114 &241800732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3432,9 +3631,20 @@ MonoBehaviour:
   _rayInteractor: {fileID: 1787690766}
   _cursor: {fileID: 1295282456}
   _renderer: {fileID: 482160040}
-  _outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  _outlineColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
+  _startScale: {x: 0, y: 0, z: 0}
+  _shaderRadialGradientScale: 683
+  _shaderRadialGradientIntensity: 682
+  _shaderRadialGradientBackgroundOpacity: 684
+  _shaderOutlineColor: 599
   _selectObject: {fileID: 301515879}
+  _started: 0
 --- !u!1 &287435927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,7 +3924,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &305629752
@@ -4133,11 +4343,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RootRaycaster: {fileID: 0}
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
-    serializedVersion: 2
     m_Bits: 4294967295
+  m_Canvas: {fileID: 0}
   pointer: {fileID: 0}
   sortOrder: 0
 --- !u!223 &343810513
@@ -4179,6 +4390,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 0}
   _surface: {fileID: 0}
   _selectSurface: {fileID: 0}
@@ -4221,6 +4434,13 @@ MonoBehaviour:
   resetHmdPoseByMiddleMouseButton: 1
   activateKeys: 3201000031010000
   pitchKeys: 3401000033010000
+  manager: {fileID: 0}
+  lastFrameEmulationActivated: 0
+  recordedHeadPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
+  recordedHeadPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
+  hasSentEvent: 0
+  emulatorHasInitialized: 0
+  previousCursorLockMode: 0
 --- !u!114 &343847422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4236,6 +4456,7 @@ MonoBehaviour:
   useRecommendedMSAALevel: 1
   _monoscopic: 0
   _sharpenType: 0
+  _colorGamut: 7
   enableDynamicResolution: 0
   minDynamicResolutionScale: 1
   maxDynamicResolutionScale: 1
@@ -4248,21 +4469,31 @@ MonoBehaviour:
   enableMixedReality: 0
   compositionMethod: 0
   extraHiddenLayers:
-    serializedVersion: 2
     m_Bits: 0
   extraVisibleLayers:
-    serializedVersion: 2
     m_Bits: 0
   dynamicCullingMask: 1
-  externalCompositionBackdropColorRift: {r: 0, g: 1, b: 0, a: 1}
-  externalCompositionBackdropColorQuest: {r: 0, g: 0, b: 0, a: 0}
+  externalCompositionBackdropColorRift:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  externalCompositionBackdropColorQuest:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
   capturingCameraDevice: 0
   flipCameraFrameHorizontally: 0
   flipCameraFrameVertically: 0
   handPoseStateLatency: 0
   sandwichCompositionRenderLatency: 0
   sandwichCompositionBufferedFrames: 8
-  chromaKeyColor: {r: 0, g: 1, b: 0, a: 1}
+  chromaKeyColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
   chromaKeySimilarity: 0.6
   chromaKeySmoothRange: 0.03
   chromaKeySpillRange: 0.06
@@ -4276,7 +4507,7 @@ MonoBehaviour:
   virtualGreenScreenApplyDepthCulling: 0
   virtualGreenScreenDepthTolerance: 0.2
   mrcActivationMode: 0
-  launchMultimodalHandsControllersOnStartup: 0
+  launchSimultaneousHandsControllersOnStartup: 0
   isInsightPassthroughEnabled: 0
   requestBodyTrackingPermissionOnStartup: 0
   requestFaceTrackingPermissionOnStartup: 0
@@ -4293,6 +4524,10 @@ MonoBehaviour:
   LateControllerUpdate: 1
   LateLatching: 0
   controllerDrivenHandPosesType: 0
+  SimultaneousHandsAndControllersEnabled: 0
+  _readOnlyWideMotionModeHandPosesEnabled: 0
+  wideMotionModeHandPosesEnabled: 0
+  <isSupportedPlatform>k__BackingField: 0
 --- !u!114 &343847423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,9 +4540,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <trackingSpace>k__BackingField: {fileID: 1779146200}
+  <leftEyeAnchor>k__BackingField: {fileID: 77162163}
+  <centerEyeAnchor>k__BackingField: {fileID: 592461978}
+  <rightEyeAnchor>k__BackingField: {fileID: 1563170538}
+  <leftHandAnchor>k__BackingField: {fileID: 1389278238}
+  <rightHandAnchor>k__BackingField: {fileID: 947651211}
+  <leftHandAnchorDetached>k__BackingField: {fileID: 1457167138}
+  <rightHandAnchorDetached>k__BackingField: {fileID: 983716996}
+  <leftControllerInHandAnchor>k__BackingField: {fileID: 1551790048}
+  <leftHandOnControllerAnchor>k__BackingField: {fileID: 1355678842}
+  <rightControllerInHandAnchor>k__BackingField: {fileID: 315874803}
+  <rightHandOnControllerAnchor>k__BackingField: {fileID: 1933800248}
+  <leftControllerAnchor>k__BackingField: {fileID: 184459163}
+  <rightControllerAnchor>k__BackingField: {fileID: 989697384}
+  <trackerAnchor>k__BackingField: {fileID: 1921224690}
   usePerEyeCameras: 0
   useFixedUpdateForTracking: 0
   disableEyeAnchorCameras: 0
+  _skipUpdate: 0
+  _centerEyeCamera: {fileID: 592461979}
+  _leftEyeCamera: {fileID: 77162164}
+  _rightEyeCamera: {fileID: 1563170539}
+  _previousTrackingSpaceTransform:
+    e00: -0.00000011920929
+    e01: 0
+    e02: 1.0000001
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: -1.0000001
+    e21: 0
+    e22: -0.00000011920929
+    e23: 0
+    e30: 16.667
+    e31: 2.701
+    e32: -0.239
+    e33: 1
 --- !u!114 &343847424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4386,6 +4657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hand: {fileID: 123116875}
   _offset: {x: 0, y: 0, z: 0}
+  _started: 0
 --- !u!1 &344296063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,11 +4848,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcebab82b3c5dd4fac023079b7fed29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 370456982}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 370456982}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
   _filterParameters: {fileID: 0}
+  _dataSourceHandle: -1
+  _handModifierHandle: -1
+  _hasFlaggedError: 0
 --- !u!114 &370456982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4593,10 +4967,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daff26e66096cd49a253ca3ab592c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 945586926}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 945586926}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
 --- !u!4 &370456983
 Transform:
   m_ObjectHideFlags: 0
@@ -4659,8 +5132,14 @@ MonoBehaviour:
   _hand: {fileID: 123116875}
   _rayInteractor: {fileID: 123116872}
   _materialEditor: {fileID: 0}
-  _glowColor: {r: 1, g: 1, b: 1, a: 0}
+  _glowColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0
   _glowType: 18
+  _glowEnabled: 0
+  _started: 0
 --- !u!1 &381835631
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,8 +6235,14 @@ MonoBehaviour:
   _hand: {fileID: 1787690769}
   _rayInteractor: {fileID: 1787690766}
   _materialEditor: {fileID: 0}
-  _glowColor: {r: 1, g: 1, b: 1, a: 0}
+  _glowColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0
   _glowType: 18
+  _glowEnabled: 0
+  _started: 0
 --- !u!1 &464566976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,6 +6775,17 @@ MonoBehaviour:
   m_controller: 1
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
+  m_animator: {fileID: 0}
+  RayHelper: {fileID: 0}
+  m_activeController: {fileID: 0}
+  m_controllerModelsInitialized: 0
+  m_hasInputFocus: 1
+  m_hasInputFocusPrev: 0
+  m_isActive: 0
+  activeControllerType: 2
+  m_prevControllerConnected: 0
+  m_prevControllerConnectedCached: 0
+  m_prevControllerInHandState: 0
 --- !u!114 &490089254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6415,6 +6911,8 @@ MonoBehaviour:
   _hand: {fileID: 241800731}
   _pokeInteractor: {fileID: 1291078196}
   _syntheticHand: {fileID: 823361224}
+  _isTouching: 0
+  _started: 0
 --- !u!114 &497149588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8497,16 +8995,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c67033f580359c4581dff1ccffcca91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 4
   _updateAfter: {fileID: 0}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 1250383158}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
   _wristPositionLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8514,8 +9109,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8527,12 +9121,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristPositionUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8540,8 +9133,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8553,12 +9145,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristRotationLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8566,8 +9157,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8579,12 +9169,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristRotationUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8592,8 +9181,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8605,12 +9193,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _jointLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8618,8 +9205,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8631,12 +9217,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _jointUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8644,8 +9229,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8657,7 +9241,879 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _spreadAllowance: 5
+  _wristPositionOverrideFactor: 0
+  _wristRotationOverrideFactor: 0
+  _jointsOverrideFactor:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  _jointLockProgressCurves:
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _jointUnlockProgressCurves:
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _desiredWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _wristPositionLocked: 0
+  _wristRotationLocked: 0
+  _constrainedWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _lastWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _desiredJointsRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _constrainedJointRotations:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _lastSyntheticRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _jointsFreedomLevels: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  _hasConnectedData: 0
 --- !u!114 &648116896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8707,6 +10163,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 0}
   _surfacePatch: {fileID: 381835632}
   _enterHoverNormal: 0.03
@@ -8724,10 +10182,8 @@ MonoBehaviour:
     DragTangent: 0.01
     DragEaseCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -8735,8 +10191,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -8748,14 +10203,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.05
+      _animationStartTime: 0
   _positionPinning:
     Enabled: 0
     MaxPinDistance: 0.075
     PinningEaseCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0.2
+      - time: 0.2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -8763,8 +10217,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -8777,10 +10230,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     ResyncCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -8788,8 +10239,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -8801,14 +10251,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.2
+      _animationStartTime: 0
   _recoilAssist:
     Enabled: 0
     UseDynamicDecay: 0
     DynamicDecayCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 50
         inSlope: 0
         outSlope: 0
@@ -8816,8 +10265,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
+      - time: 0.9
         value: 0.5
         inSlope: -47
         outSlope: -47
@@ -9008,6 +10456,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 0}
   _surfacePatch: {fileID: 665672726}
   _enterHoverNormal: 0.03
@@ -9025,10 +10475,8 @@ MonoBehaviour:
     DragTangent: 0.01
     DragEaseCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -9036,8 +10484,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -9049,14 +10496,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.05
+      _animationStartTime: 0
   _positionPinning:
     Enabled: 0
     MaxPinDistance: 0.075
     PinningEaseCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0.2
+      - time: 0.2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -9064,8 +10510,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -9078,10 +10523,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     ResyncCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -9089,8 +10532,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -9102,14 +10544,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.2
+      _animationStartTime: 0
   _recoilAssist:
     Enabled: 0
     UseDynamicDecay: 0
     DynamicDecayCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 50
         inSlope: 0
         outSlope: 0
@@ -9117,8 +10558,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
+      - time: 0.9
         value: 0.5
         inSlope: -47
         outSlope: -47
@@ -9265,8 +10705,11 @@ MonoBehaviour:
   _generateMipMaps: 1
   _pixelsPerUnit: 100
   _renderingLayers:
-    serializedVersion: 2
     m_Bits: 32
+  _listener: {fileID: 0}
+  _tex: {fileID: 0}
+  _camera: {fileID: 0}
+  _started: 0
 --- !u!114 &661810098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9284,6 +10727,8 @@ MonoBehaviour:
   _renderingMode: 0
   _useAlphaToMask: 1
   _alphaCutoutThreshold: 0.5
+  _material: {fileID: 0}
+  _started: 0
 --- !u!114 &661810099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9299,6 +10744,11 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
+  _points: []
+  _pointIds: 
+  _selectingPoints: []
+  _selectingPointIds: 
+  _started: 0
   _canvasMesh: {fileID: 228083148}
 --- !u!114 &661810100
 MonoBehaviour:
@@ -9315,7 +10765,13 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
+  _points: []
+  _pointIds: 
+  _selectingPoints: []
+  _selectingPointIds: 
+  _started: 0
   _canvas: {fileID: 661810095}
+  _registered: 0
 --- !u!114 &661810101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9332,6 +10788,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 0}
   _surface: {fileID: 169604627}
   _selectSurface: {fileID: 0}
@@ -10419,16 +11877,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c67033f580359c4581dff1ccffcca91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 4
   _updateAfter: {fileID: 0}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 241800731}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
   _wristPositionLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10436,8 +11991,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10449,12 +12003,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristPositionUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10462,8 +12015,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10475,12 +12027,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristRotationLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10488,8 +12039,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10501,12 +12051,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _wristRotationUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10514,8 +12063,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10527,12 +12075,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _jointLockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10540,8 +12087,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10553,12 +12099,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _jointUnlockCurve:
     _animationCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -10566,8 +12111,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -10579,7 +12123,879 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     _animationLength: 0.1
+    _animationStartTime: 0
   _spreadAllowance: 5
+  _wristPositionOverrideFactor: 0
+  _wristRotationOverrideFactor: 0
+  _jointsOverrideFactor:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  _jointLockProgressCurves:
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _jointUnlockProgressCurves:
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  - _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _desiredWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _wristPositionLocked: 0
+  _wristRotationLocked: 0
+  _constrainedWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _lastWristPose:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+  _desiredJointsRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _constrainedJointRotations:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _lastSyntheticRotation:
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  - {x: 0, y: 0, z: 0, w: 0}
+  _jointsFreedomLevels: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  _hasConnectedData: 0
 --- !u!114 &823361225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10706,339 +13122,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1639065880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &845719444
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3127652960751121809, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385033998817829778, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4660179
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385033998817829778, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0512147
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385033998817829778, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.70832
-      objectReference: {fileID: 0}
-    - target: {fileID: 3385033998817829778, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.00063974335
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0006397432
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.00063974335
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.018
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7660444
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6427877
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 16.299
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.181
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013590323122092837, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6256841000877662820, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      propertyPath: m_Name
-      value: ColorPalette_8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719449}
-    - targetCorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719451}
-    - targetCorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719450}
-    - targetCorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719454}
-    - targetCorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719453}
-    - targetCorrespondingSourceObject: {fileID: 955821438763426326, guid: 6011506e6bdf743039d4e6c92971cc97,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 53066918}
-  m_SourcePrefab: {fileID: 100100000, guid: 6011506e6bdf743039d4e6c92971cc97, type: 3}
---- !u!1 &845719446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8964901665729559955, guid: 6011506e6bdf743039d4e6c92971cc97,
-    type: 3}
-  m_PrefabInstance: {fileID: 845719444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &845719447 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6985858702225660485, guid: 6011506e6bdf743039d4e6c92971cc97,
-    type: 3}
-  m_PrefabInstance: {fileID: 845719444}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &845719448 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6740039140718850292, guid: 6011506e6bdf743039d4e6c92971cc97,
-    type: 3}
-  m_PrefabInstance: {fileID: 845719444}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &845719449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845719446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88918e321f5d7714495dc0423e32fdf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  picker: {fileID: 845719448}
-  pickedColorImage: {fileID: 845719447}
-  OnColorChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1375737371}
-        m_TargetAssemblyTypeName: VRDrawHandTracking, Assembly-CSharp
-        m_MethodName: UpdateDrawingColor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  vrDrawHandTracking: {fileID: 1375737371}
-  colorWheelMat: {fileID: 2100000, guid: ddf21bb823c3ad644b09d3d90adc37d0, type: 2}
-  totalNumberOfColors: 12
-  wheelsCount: 1
-  startingAngle: 0.04
-  controlSV: 0
-  minimumSatValStep: 0.01
-  minimumSaturation: 0.25
-  maximumSaturation: 1
-  minimumValue: 0.25
-  maximumValue: 1
-  OnHueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  ovrHand: {fileID: 1525108219}
-  rotationSpeed: 50
---- !u!114 &845719450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845719446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  pointer: {fileID: 0}
-  sortOrder: 0
---- !u!223 &845719451
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845719446}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 592461979}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!64 &845719453
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845719446}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
---- !u!114 &845719454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845719446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df725621a09fa4c46ae90a2ccc312a85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: {fileID: 1525108219}
 --- !u!1 &846072690
 GameObject:
   m_ObjectHideFlags: 0
@@ -11197,10 +13280,8 @@ MonoBehaviour:
   _rayInteractor: {fileID: 1787690766}
   _skinnedMeshRenderer: {fileID: 1198265880}
   _remapCurve:
-    serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -11208,8 +13289,7 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 1
       inSlope: 0
       outSlope: 0
@@ -11221,6 +13301,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _alphaRange: {x: 0.1, y: 0.4}
+  _started: 0
 --- !u!1 &855117626
 GameObject:
   m_ObjectHideFlags: 0
@@ -12261,13 +14342,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4855895ba1c44959a306beb7ae318fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 0
   _updateAfter: {fileID: 0}
+  _currentDataVersion: 0
   _cameraRigRef: {fileID: 2055068049}
   _processLateUpdates: 0
   _handedness: 1
+  _ovrHand: {fileID: 0}
   _trackingToWorldTransformer: {fileID: 2055068048}
   _handSkeletonProvider: {fileID: 1972576322}
+  _lastHandScale: 0
 --- !u!4 &945586927
 Transform:
   m_ObjectHideFlags: 0
@@ -12560,11 +14646,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcebab82b3c5dd4fac023079b7fed29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 961597301}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 961597301}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
   _filterParameters: {fileID: 0}
+  _dataSourceHandle: -1
+  _handModifierHandle: -1
+  _hasFlaggedError: 0
 --- !u!114 &961597301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12577,10 +14765,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daff26e66096cd49a253ca3ab592c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 149210482}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 149210482}
   _applyModifier: 1
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
 --- !u!4 &961597302
 Transform:
   m_ObjectHideFlags: 0
@@ -13172,11 +15459,17 @@ MonoBehaviour:
   _handVisual: {fileID: 1322625904}
   _handRenderer: {fileID: 927954175}
   _materialEditor: {fileID: 927954174}
-  _glowColor: {r: 1, g: 1, b: 1, a: 0}
+  _glowColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0
   _overshootMaxDistance: 0.15
   _pokeFinger: 1
   _maxGradientLength: 0.9
   _glowType: 31
+  _glowEnabled: 0
+  _started: 0
 --- !u!1 &1030856320
 GameObject:
   m_ObjectHideFlags: 0
@@ -13446,7 +15739,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
+  m_EventSystem: {fileID: 0}
+  m_InputOverride: {fileID: 0}
+  m_DefaultInput: {fileID: 0}
   _useInitialPressPositionForDrag: 1
+  _pointerEventCamera: {fileID: 0}
+  _started: 0
 --- !u!114 &1034639059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13460,6 +15758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
+  m_EventSystem: {fileID: 0}
+  m_InputOverride: {fileID: 0}
+  m_DefaultInput: {fileID: 0}
   rayTransform: {fileID: 0}
   m_Cursor: {fileID: 0}
   joyPadClickButton: 1
@@ -13473,6 +15774,9 @@ MonoBehaviour:
   InvertSwipeXAxis: 0
   angleDragThreshold: 1
   m_SpherecastRadius: 1
+  m_NextAction: 0
+  m_LastMousePosition: {x: 0, y: 0}
+  m_MousePosition: {x: 0, y: 0}
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -14146,6 +16450,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _started: 0
 --- !u!1 &1120273523
 GameObject:
   m_ObjectHideFlags: 0
@@ -14583,12 +16888,14 @@ MonoBehaviour:
   _editor: {fileID: 1177907351}
   _colorShaderPropertyName: _Color
   _normalColorState:
-    Color: {r: 1, g: 1, b: 1, a: 1}
+    Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -14596,8 +16903,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -14610,12 +16916,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 1, a: 1}
+    Color:
+      r: 0
+      g: 0
+      b: 1
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -14623,8 +16931,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -14637,12 +16944,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _selectColorState:
-    Color: {r: 0, g: 1, b: 0, a: 1}
+    Color:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -14650,8 +16959,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -14664,12 +16972,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _disabledColorState:
-    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    Color:
+      r: 0.5
+      g: 0.5
+      b: 0.5
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -14677,8 +16987,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -14690,6 +16999,41 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     ColorTime: 0.1
+  _currentColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+  _target:
+    Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    ColorCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ColorTime: 0.1
+  _colorShaderID: 0
+  _started: 0
 --- !u!114 &1177907348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14704,6 +17048,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pokeInteractable: {fileID: 655442628}
   _buttonBaseTransform: {fileID: 665672725}
+  _maxOffsetAlongNormal: 0
+  _planarOffset: {x: 0, y: 0}
+  _postProcessInteractor: {fileID: 0}
+  _started: 0
 --- !u!23 &1177907349
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14761,8 +17109,16 @@ MonoBehaviour:
   _editor: {fileID: 1177907351}
   _width: 1
   _height: 1
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _borderColor: {r: 0, g: 0, b: 0, a: 1}
+  _color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _borderColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
   _radiusTopLeft: 0
   _radiusTopRight: 0
   _radiusBottomLeft: 0
@@ -15049,6 +17405,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 661810100}
   _surfacePatch: {fileID: 0}
   _enterHoverNormal: 0.03
@@ -15066,10 +17424,8 @@ MonoBehaviour:
     DragTangent: 0.01
     DragEaseCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -15077,8 +17433,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -15090,14 +17445,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.05
+      _animationStartTime: 0
   _positionPinning:
     Enabled: 0
     MaxPinDistance: 0.075
     PinningEaseCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0.2
+      - time: 0.2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -15105,8 +17459,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -15119,10 +17472,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     ResyncCurve:
       _animationCurve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -15130,8 +17481,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -15143,14 +17493,13 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _animationLength: 0.2
+      _animationStartTime: 0
   _recoilAssist:
     Enabled: 0
     UseDynamicDecay: 0
     DynamicDecayCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 50
         inSlope: 0
         outSlope: 0
@@ -15158,8 +17507,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 0.9
+      - time: 0.9
         value: 0.5
         inSlope: -47
         outSlope: -47
@@ -15803,10 +18151,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 8
   _updateAfter: {fileID: 961597300}
+  _currentDataVersion: 0
   _iModifyDataFromSourceMono: {fileID: 961597300}
   _applyModifier: 0
+  _thisDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
+  _currentDataAsset:
+    IsDataValid: 0
+    IsConnected: 0
+    IsTracked: 0
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    RootPoseOrigin: 0
+    Joints:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    IsHighConfidence: 0
+    IsFingerPinching: 
+    IsFingerHighConfidence: 
+    FingerPinchStrength:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    HandScale: 0
+    PointerPose:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    PointerPoseOrigin: 0
+    IsDominantHand: 0
 --- !u!114 &1250383159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16022,6 +18469,12 @@ MonoBehaviour:
   _systemGestureBehavior: 1
   _systemGestureMaterial: {fileID: 2100000, guid: 9d107f2f043e1ed408b970f146718017,
     type: 2}
+  _originalMaterial: {fileID: 0}
+  _skinnedMeshRenderer: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <ShouldUseSystemGestureMaterial>k__BackingField: 0
 --- !u!114 &1276308241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16035,6 +18488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshType: 1
+  _mesh: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
 --- !u!114 &1276308242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16051,9 +18506,19 @@ MonoBehaviour:
   _systemGestureBehavior: 1
   _renderPhysicsCapsules: 0
   _skeletonMaterial: {fileID: 2100000, guid: 9c05c5a6e4902ff4082cfb34e5b64b2d, type: 2}
+  _skeletonDefaultMaterial: {fileID: 0}
   _capsuleMaterial: {fileID: 0}
+  _capsuleDefaultMaterial: {fileID: 0}
   _systemGestureMaterial: {fileID: 2100000, guid: 38beab19e7c1f7947afac78fd60f90b0,
     type: 2}
+  _systemGestureDefaultMaterial: {fileID: 0}
+  _ovrSkeleton: {fileID: 0}
+  _skeletonGO: {fileID: 0}
+  _scale: 0
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <ShouldUseSystemGestureMaterial>k__BackingField: 0
 --- !u!114 &1276308243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16071,6 +18536,13 @@ MonoBehaviour:
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
   _applyBoneTranslations: 1
+  _bonesGO: {fileID: 0}
+  _bindPosesGO: {fileID: 0}
+  _capsulesGO: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <SkeletonChangedCount>k__BackingField: 0
 --- !u!114 &1276308244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16086,6 +18558,19 @@ MonoBehaviour:
   HandType: 1
   _pointerPoseRoot: {fileID: 0}
   m_showState: 3
+  RayHelper: {fileID: 0}
+  _pointerPoseGO: {fileID: 0}
+  _wasIndexPinching: 0
+  _wasReleased: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <IsTracked>k__BackingField: 0
+  <IsSystemGestureInProgress>k__BackingField: 0
+  <IsPointerPoseValid>k__BackingField: 0
+  <PointerPose>k__BackingField: {fileID: 0}
+  <HandScale>k__BackingField: 0
+  <HandConfidence>k__BackingField: 0
+  <IsDominantHand>k__BackingField: 0
 --- !u!114 &1276308245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16312,15 +18797,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nativeId: 5282254251404903456
   _activeState: {fileID: 1291078197}
   _interactableFilters: []
   _candidateTiebreaker: {fileID: 0}
+  _clearComputeCandidateOverrideOnSelect: 0
+  _clearComputeShouldSelectOverrideOnSelect: 0
+  _clearComputeShouldUnselectOverrideOnUnselect: 0
+  _state: 0
   _maxIterationsPerFrame: 3
+  _candidate: {fileID: 0}
+  _interactable: {fileID: 0}
+  _selectedInteractable: {fileID: 0}
   _data: {fileID: 0}
+  _started: 0
+  <IsRootDriver>k__BackingField: 1
   _pointTransform: {fileID: 1108804278}
   _radius: 0.005
   _touchReleaseThreshold: 0.002
   _equalDistanceThreshold: 0.001
+  <ClosestPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <TouchPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <TouchNormal>k__BackingField: {x: 0, y: 0, z: 0}
+  <Origin>k__BackingField: {x: 0, y: 0, z: 0}
+  _previousPokeOrigin: {x: 0, y: 0, z: 0}
+  _previousCandidate: {fileID: 0}
+  _hitInteractable: {fileID: 0}
+  _recoilInteractable: {fileID: 0}
+  _previousSurfacePointLocal: {x: 0, y: 0, z: 0}
+  _firstTouchPointLocal: {x: 0, y: 0, z: 0}
+  _targetTouchPointLocal: {x: 0, y: 0, z: 0}
+  _easeTouchPointLocal: {x: 0, y: 0, z: 0}
+  _isRecoiled: 0
+  _isDragging: 0
+  _dragEaseCurve:
+    _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _pinningResyncCurve:
+    _animationCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _animationLength: 1
+    _animationStartTime: 0
+  _dragCompareSurfacePointLocal: {x: 0, y: 0, z: 0}
+  _maxDistanceFromFirstTouchPoint: 0
+  _recoilVelocityExpansion: 0
+  _selectMaxDepth: 0
+  _reEnterDepth: 0
+  _lastUpdateTime: 0
+  _isPassedSurface: 0
+  _previousDragCurveProgress: 0
+  _previousPinningCurveProgress: 0
 --- !u!114 &1291078197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16350,6 +18916,7 @@ MonoBehaviour:
   _includeChildrenAsDependents: 1
   _gameObjects: []
   _monoBehaviours: []
+  _active: 0
 --- !u!114 &1291078199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16884,6 +19451,9 @@ MonoBehaviour:
   - {fileID: 880402296}
   - {fileID: 1094072138}
   - {fileID: 1928993701}
+  _wristScalePropertyId: 0
+  _forceOffVisibility: 0
+  _started: 0
 --- !u!1 &1324174052
 GameObject:
   m_ObjectHideFlags: 0
@@ -16932,6 +19502,7 @@ MonoBehaviour:
   _handJointId: 8
   _localPositionOffset: {x: 0.017, y: 0, z: 0}
   _rotationOffset: {x: 0, y: 0, z: 0, w: 1}
+  _started: 0
 --- !u!1 &1334447240
 GameObject:
   m_ObjectHideFlags: 0
@@ -17496,8 +20067,12 @@ MonoBehaviour:
   ovrSkeleton: {fileID: 1276308243}
   linePrefab: {fileID: 1741392251992255226, guid: 321164d396ba34470922d20a787309b0,
     type: 3}
+  currentLineRenderer: {fileID: 0}
   lineWidth: 0.01
   lineMaterial: {fileID: 2100000, guid: e5c1174662ff44b9dac9cac2d94e0ea2, type: 2}
+  isDrawing: 0
+  isErasing: 0
+  lines: []
 --- !u!1 &1377840657
 GameObject:
   m_ObjectHideFlags: 0
@@ -18037,6 +20612,8 @@ MonoBehaviour:
   _hand: {fileID: 0}
   _pokeInteractor: {fileID: 0}
   _syntheticHand: {fileID: 0}
+  _isTouching: 0
+  _started: 0
 --- !u!1 &1438862270
 GameObject:
   m_ObjectHideFlags: 0
@@ -18090,12 +20667,14 @@ MonoBehaviour:
   _editor: {fileID: 1438862274}
   _colorShaderPropertyName: _Color
   _normalColorState:
-    Color: {r: 1, g: 1, b: 1, a: 1}
+    Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -18103,8 +20682,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -18117,12 +20695,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _hoverColorState:
-    Color: {r: 0, g: 0, b: 1, a: 1}
+    Color:
+      r: 0
+      g: 0
+      b: 1
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -18130,8 +20710,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -18144,12 +20723,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _selectColorState:
-    Color: {r: 0, g: 1, b: 0, a: 1}
+    Color:
+      r: 0
+      g: 1
+      b: 0
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -18157,8 +20738,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -18171,12 +20751,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     ColorTime: 0.1
   _disabledColorState:
-    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    Color:
+      r: 0.5
+      g: 0.5
+      b: 0.5
+      a: 1
     ColorCurve:
-      serializedVersion: 2
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -18184,8 +20766,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -18197,6 +20778,41 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     ColorTime: 0.1
+  _currentColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+  _target:
+    Color:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    ColorCurve:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ColorTime: 0.1
+  _colorShaderID: 0
+  _started: 0
 --- !u!114 &1438862273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18212,8 +20828,16 @@ MonoBehaviour:
   _editor: {fileID: 1438862274}
   _width: 0.1
   _height: 0.1
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _borderColor: {r: 0, g: 0, b: 0, a: 1}
+  _color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _borderColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
   _radiusTopLeft: 0
   _radiusTopRight: 0
   _radiusBottomLeft: 0
@@ -18260,6 +20884,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pokeInteractable: {fileID: 653735852}
   _buttonBaseTransform: {fileID: 381835635}
+  _maxOffsetAlongNormal: 0
+  _planarOffset: {x: 0, y: 0}
+  _postProcessInteractor: {fileID: 0}
+  _started: 0
 --- !u!23 &1438862277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18748,12 +21376,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f273abee0604ad2409c9bbc9a60e461e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _started: 0
+  _requiresUpdate: 1
   _updateMode: 0
   _updateAfter: {fileID: 0}
+  _currentDataVersion: 0
   _cameraRigRef: {fileID: 2055068049}
   _processLateUpdates: 0
   _useOvrManagerEmulatedPose: 0
   _trackingToWorldTransformer: {fileID: 2055068048}
+  _hmdDataAsset:
+    Root:
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 0}
+    IsTracked: 0
+    FrameId: 0
 --- !u!1 &1484957837
 GameObject:
   m_ObjectHideFlags: 0
@@ -19143,6 +21780,8 @@ MonoBehaviour:
   _hand: {fileID: 1250383158}
   _pokeInteractor: {fileID: 228541020}
   _syntheticHand: {fileID: 648116895}
+  _isTouching: 0
+  _started: 0
 --- !u!114 &1516147295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19510,6 +22149,12 @@ MonoBehaviour:
   _systemGestureBehavior: 1
   _systemGestureMaterial: {fileID: 2100000, guid: 9d107f2f043e1ed408b970f146718017,
     type: 2}
+  _originalMaterial: {fileID: 0}
+  _skinnedMeshRenderer: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <ShouldUseSystemGestureMaterial>k__BackingField: 0
 --- !u!114 &1525108216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19523,6 +22168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshType: 0
+  _mesh: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
 --- !u!114 &1525108217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19539,9 +22186,19 @@ MonoBehaviour:
   _systemGestureBehavior: 1
   _renderPhysicsCapsules: 0
   _skeletonMaterial: {fileID: 2100000, guid: 9c05c5a6e4902ff4082cfb34e5b64b2d, type: 2}
+  _skeletonDefaultMaterial: {fileID: 0}
   _capsuleMaterial: {fileID: 0}
+  _capsuleDefaultMaterial: {fileID: 0}
   _systemGestureMaterial: {fileID: 2100000, guid: 38beab19e7c1f7947afac78fd60f90b0,
     type: 2}
+  _systemGestureDefaultMaterial: {fileID: 0}
+  _ovrSkeleton: {fileID: 0}
+  _skeletonGO: {fileID: 0}
+  _scale: 0
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <ShouldUseSystemGestureMaterial>k__BackingField: 0
 --- !u!114 &1525108218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19559,6 +22216,13 @@ MonoBehaviour:
   _updateRootScale: 1
   _enablePhysicsCapsules: 0
   _applyBoneTranslations: 1
+  _bonesGO: {fileID: 0}
+  _bindPosesGO: {fileID: 0}
+  _capsulesGO: {fileID: 0}
+  <IsInitialized>k__BackingField: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <SkeletonChangedCount>k__BackingField: 0
 --- !u!114 &1525108219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19574,6 +22238,19 @@ MonoBehaviour:
   HandType: 0
   _pointerPoseRoot: {fileID: 0}
   m_showState: 3
+  RayHelper: {fileID: 0}
+  _pointerPoseGO: {fileID: 0}
+  _wasIndexPinching: 0
+  _wasReleased: 0
+  <IsDataValid>k__BackingField: 0
+  <IsDataHighConfidence>k__BackingField: 0
+  <IsTracked>k__BackingField: 0
+  <IsSystemGestureInProgress>k__BackingField: 0
+  <IsPointerPoseValid>k__BackingField: 0
+  <PointerPose>k__BackingField: {fileID: 0}
+  <HandScale>k__BackingField: 0
+  <HandConfidence>k__BackingField: 0
+  <IsDominantHand>k__BackingField: 0
 --- !u!114 &1525108220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20380,11 +23057,17 @@ MonoBehaviour:
   _handVisual: {fileID: 1883654271}
   _handRenderer: {fileID: 1031951964}
   _materialEditor: {fileID: 1031951963}
-  _glowColor: {r: 1, g: 1, b: 1, a: 0}
+  _glowColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0
   _overshootMaxDistance: 0.15
   _pokeFinger: 1
   _maxGradientLength: 0.9
   _glowType: 31
+  _glowEnabled: 0
+  _started: 0
 --- !u!1 &1587674941
 GameObject:
   m_ObjectHideFlags: 0
@@ -20431,6 +23114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hand: {fileID: 1787690769}
   _offset: {x: 0, y: 0, z: 0}
+  _started: 0
 --- !u!1 &1589811535
 GameObject:
   m_ObjectHideFlags: 0
@@ -20939,6 +23623,17 @@ MonoBehaviour:
   m_controller: 2
   m_showState: 1
   showWhenHandsArePoweredByNaturalControllerPoses: 0
+  m_animator: {fileID: 0}
+  RayHelper: {fileID: 0}
+  m_activeController: {fileID: 0}
+  m_controllerModelsInitialized: 0
+  m_hasInputFocus: 1
+  m_hasInputFocusPrev: 0
+  m_isActive: 0
+  activeControllerType: 2
+  m_prevControllerConnected: 0
+  m_prevControllerConnectedCached: 0
+  m_prevControllerInHandState: 0
 --- !u!114 &1658005505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21862,7 +24557,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1755817592
@@ -22146,15 +24841,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733c5f009d26ad49b3685117b8d3eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nativeId: 5282254251404903456
   _activeState: {fileID: 1787690767}
   _interactableFilters: []
   _candidateTiebreaker: {fileID: 0}
+  _clearComputeCandidateOverrideOnSelect: 0
+  _clearComputeShouldSelectOverrideOnSelect: 0
+  _clearComputeShouldUnselectOverrideOnUnselect: 0
+  _state: 0
   _maxIterationsPerFrame: 1
+  _candidate: {fileID: 0}
+  _interactable: {fileID: 0}
+  _selectedInteractable: {fileID: 0}
   _data: {fileID: 0}
+  _started: 0
+  <IsRootDriver>k__BackingField: 1
   _selector: {fileID: 148552318}
   _rayOrigin: {fileID: 1587674942}
   _maxRayLength: 5
   _equalDistanceThreshold: 0.001
+  _movementHitDelta:
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  <Origin>k__BackingField: {x: 0, y: 0, z: 0}
+  <Rotation>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
+  <Forward>k__BackingField: {x: 0, y: 0, z: 0}
+  <End>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!114 &1787690767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22215,6 +24927,7 @@ MonoBehaviour:
   _gameObjects: []
   _monoBehaviours:
   - {fileID: 1787690766}
+  _active: 0
 --- !u!114 &1787690771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22641,9 +25354,20 @@ MonoBehaviour:
   _rayInteractor: {fileID: 123116872}
   _cursor: {fileID: 179883751}
   _renderer: {fileID: 1771191308}
-  _outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  _outlineColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
   _offsetAlongNormal: 0.005
+  _playerHead: {fileID: 0}
+  _startScale: {x: 0, y: 0, z: 0}
+  _shaderRadialGradientScale: 683
+  _shaderRadialGradientIntensity: 682
+  _shaderRadialGradientBackgroundOpacity: 684
+  _shaderOutlineColor: 599
   _selectObject: {fileID: 1751222730}
+  _started: 0
 --- !u!1 &1815631967
 GameObject:
   m_ObjectHideFlags: 0
@@ -22798,6 +25522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 123116875}
+  _isIndexFingerPinching: 0
+  _started: 0
 --- !u!4 &1829859069
 Transform:
   m_ObjectHideFlags: 0
@@ -23410,6 +26136,9 @@ MonoBehaviour:
   - {fileID: 309674527}
   - {fileID: 1815631968}
   - {fileID: 880466285}
+  _wristScalePropertyId: 0
+  _forceOffVisibility: 0
+  _started: 0
 --- !u!1 &1884877950
 GameObject:
   m_ObjectHideFlags: 0
@@ -23441,7 +26170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
+  m_EventSystem: {fileID: 0}
+  m_InputOverride: {fileID: 0}
+  m_DefaultInput: {fileID: 0}
   _useInitialPressPositionForDrag: 1
+  _pointerEventCamera: {fileID: 0}
+  _started: 0
 --- !u!114 &1884877952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23521,10 +26255,8 @@ MonoBehaviour:
   _rayInteractor: {fileID: 123116872}
   _skinnedMeshRenderer: {fileID: 141816939}
   _remapCurve:
-    serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -23532,8 +26264,7 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
-    - serializedVersion: 3
-      time: 1
+    - time: 1
       value: 1
       inSlope: 0
       outSlope: 0
@@ -23545,6 +26276,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _alphaRange: {x: 0.1, y: 0.4}
+  _started: 0
 --- !u!1 &1889591369
 GameObject:
   m_ObjectHideFlags: 0
@@ -24273,6 +27005,7 @@ MonoBehaviour:
   smoothFactor: 0.1
   ovrHand: {fileID: 1525108219}
   uiElement: {fileID: 1964602101}
+  isDragging: 0
 --- !u!114 &1964602103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24289,6 +27022,9 @@ MonoBehaviour:
   dragArea: {fileID: 634856560}
   dragObject: {fileID: 467348941}
   topOnDrag: 1
+  originalPanelLocalPosition: {x: 0, y: 0, z: 0}
+  isDragging: 0
+  smoothingFactor: 0.1
 --- !u!114 &1964602104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24305,6 +27041,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
+  _started: 0
+  _state: 3
   _pointableElement: {fileID: 0}
   _surface: {fileID: 352734207}
   _selectSurface: {fileID: 0}
@@ -25157,6 +27895,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ovrCameraRig: {fileID: 343847423}
   _requireOvrHands: 1
+  _leftHand: {fileID: 0}
+  _rightHand: {fileID: 0}
+  _started: 0
+  _isLateUpdate: 0
 --- !u!114 &2055068050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25758,7 +28500,6 @@ SceneRoots:
   - {fileID: 871263447}
   - {fileID: 653735854}
   - {fileID: 661810096}
-  - {fileID: 845719444}
   - {fileID: 1844868603}
   - {fileID: 957510403}
   - {fileID: 2003176263}
